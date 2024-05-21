@@ -14,9 +14,9 @@ module RailsSettings
     end
 
     if ActiveRecord.version >= Gem::Version.new('7.1.0.beta1')
-      serialize :value, type: Hash
+      #serialize :value, type: Hash
     else
-      serialize :value, Hash
+      #serialize :value, Hash
     end
 
     if RailsSettings.can_protect_attributes?
