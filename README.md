@@ -1,6 +1,6 @@
 # Settings for Rails
 
-[![Build Status](https://travis-ci.org/ledermann/rails-settings.svg?branch=master)](https://travis-ci.org/ledermann/rails-settings)
+[![Build Status](https://github.com/ledermann/rails-settings/actions/workflows/main.yml/badge.svg)](https://github.com/ledermann/rails-settings/actions)
 [![Code Climate](https://codeclimate.com/github/ledermann/rails-settings.svg)](https://codeclimate.com/github/ledermann/rails-settings)
 [![Coverage Status](https://coveralls.io/repos/ledermann/rails-settings/badge.svg?branch=master)](https://coveralls.io/r/ledermann/rails-settings?branch=master)
 
@@ -8,9 +8,8 @@ Ruby gem to handle settings for ActiveRecord instances by storing them as serial
 
 ## Requirements
 
-* Ruby 2.4 or newer
-* Rails 4.2 or newer (including Rails 6)
-
+- Ruby 3.0 or newer
+- Rails 6.1 or newer (including Rails 7.0)
 
 ## Installation
 
@@ -26,7 +25,6 @@ Generate and run the migration:
 rails g rails_settings:migration
 rake db:migrate
 ```
-
 
 ## Usage
 
@@ -103,7 +101,6 @@ user.settings(:dashboard).update! :theme => 'black'
 user.settings(:calendar).update! :scope => 'all', :display => 'daily'
 ```
 
-
 ### Get settings
 
 ```ruby
@@ -145,6 +142,7 @@ User.without_settings_for(:calendar)
 ```
 
 ### Eager Loading
+
 ```ruby
 User.includes(:setting_objects)
 # => Eager load setting_objects when querying many users
@@ -156,16 +154,14 @@ Version 2 is a complete rewrite and has a new DSL, so it's **not** compatible wi
 
 If you don't want to upgrade, you find the old version in the [1.x](https://github.com/ledermann/rails-settings/commits/1.x) branch. But don't expect any updates there.
 
-
 ## Changelog
 
 See https://github.com/ledermann/rails-settings/releases
-
 
 ## License
 
 MIT License
 
-Copyright (c) 2012-2019 [Georg Ledermann](http://www.georg-ledermann.de)
+Copyright (c) 2012-2023 [Georg Ledermann](https://ledermann.dev)
 
 This gem is a complete rewrite of [rails-settings](https://github.com/Squeegy/rails-settings) by [Alex Wayne](https://github.com/Squeegy)
